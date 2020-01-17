@@ -1,0 +1,40 @@
+<div class="content" role="main">
+  <h1 class="title-dialog" mat-dialog-title>Thêm Member</h1>
+  <div mat-dialog-content>
+    <p class="help-text">Hãy nhập đầy đủ các thông tin?</p>
+    <div class="example-container">
+        <form class="form-container">
+          <div>
+            <label class="label-input">Họ và tên: </label>
+            <mat-form-field>
+              <input matInput placeholder="Hãy nhập họ và tên..." [(ngModel)]="data.ho_ten" name="name">
+            </mat-form-field>
+            <br>
+            <label class="label-input">Số điện thoại: </label>
+            <mat-form-field>
+              <input type="number" matInput placeholder="Hãy nhập số điện thoại..." [(ngModel)]="data.so_dien_thoai"  name="phone">
+            </mat-form-field>
+            <br>
+            <label class="label-input">Email: </label>
+            <mat-form-field>
+              <input type="email" matInput placeholder="Hãy nhập email..." [(ngModel)]="data.email"  name="email">
+            </mat-form-field>
+            <br>
+            <label class="label-input">Năm sinh: </label>
+            <mat-form-field>
+                <mat-select [(ngModel)]="data.nam_sinh"  name="yearBirth">
+                    <mat-option *ngFor="let n of ns" [value]="n.value">
+                      {{n.viewValue}}
+                    </mat-option>
+                  </mat-select>
+            </mat-form-field>
+            
+          </div>
+          <div class="foot-btn">
+            <button class="btn-btn cancel" mat-button (click)="onNoClick()"> Cancel </button>
+            <button class="btn-btn add_member" mat-button [mat-dialog-close]="data" cdkFocusInitial> Ok </button>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>

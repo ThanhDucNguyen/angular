@@ -1,0 +1,41 @@
+.content {
+    width: 100%;
+    margin: 32px auto;
+    padding: 0 16px;
+    max-width: 1200px;
+    flex-direction: column;
+}
+.main_title{
+    text-align: center;
+}
+#add_screen{
+    background: green;
+    color: white;
+    float: left;
+}
+button{
+    margin: 15px;
+}
+table {
+    width: 100%;
+}
+  
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+th.mat-sort-header-sorted {
+    color: black;
+}
+.filter{
+    width: 25%;
+    margin-left: 25px ;
+}
+th{
+    width: 20%;
+}
+.add_member{
+    background: green;
+    color: white;
+    margin: 15px 0;
+}
