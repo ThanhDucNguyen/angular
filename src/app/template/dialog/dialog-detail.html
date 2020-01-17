@@ -7,7 +7,7 @@
           <div>
             <label class="label-input">Họ và tên: </label>
             <mat-form-field>
-              <input matInput placeholder="Hãy nhập họ và tên..." [(ngModel)]="data.ho_ten" name="name">
+              <input matInput placeholder="Hãy nhập họ và tên..." [(ngModel)]="data.ho_ten" name="name" [formControl]="nameVal">
             </mat-form-field>
             <br>
             <label class="label-input">Số điện thoại: </label>
@@ -33,6 +33,7 @@
           <div class="foot-btn">
             <button class="btn-btn cancel" mat-button (click)="onNoClick()"> Cancel </button>
             <button class="btn-btn add_member" mat-button [mat-dialog-close]="data" cdkFocusInitial> Ok </button>
+            <button (click)="updateName()">Update Name</button>
           </div>
         </form>
       </div>

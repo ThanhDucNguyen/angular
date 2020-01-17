@@ -16,14 +16,16 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSortModule} from '@angular/material/sort';
 import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
-import {DialogOverview, DialogDetail} from './template/dialog/dialog.component';
+import {DialogOverview} from './template/dialog/dialog.component';
+import {DialogDetail} from './template/dialog/dialog-detail.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
-import { AddMemberComponent } from './pages/add-member/add-member.component';
+import {AddMemberComponent} from './pages/add-member/add-member.component';
+import {DialogUpdate} from './template/dialog/dialog-update.component';
 
 
 
@@ -33,14 +35,17 @@ import { AddMemberComponent } from './pages/add-member/add-member.component';
     HeaderComponent,
     ListMemberComponent,
     TemplateComponent,
+    DialogUpdate,
     DialogDetail,
     DialogOverview,
-    AddMemberComponent,
+    AddMemberComponent
   ],
   entryComponents: [
-    ListMemberComponent, 
+    ListMemberComponent,
+    DialogUpdate,
     DialogDetail,
-    DialogOverview],
+    DialogOverview
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -79,7 +84,7 @@ import { AddMemberComponent } from './pages/add-member/add-member.component';
     MatDatepickerModule, 
     ListMemberComponent,
     DialogDetail,
-    DialogOverview,
+    DialogOverview
   ],
   bootstrap: [AppComponent]
 })

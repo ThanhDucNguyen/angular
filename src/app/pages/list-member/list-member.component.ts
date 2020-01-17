@@ -41,4 +41,7 @@ export class ListMemberComponent{
   }
   dialogUpdate(member) {
   }
+  openDialog(): void {
+    this.dialogService.openDialog();
+  }
 }
