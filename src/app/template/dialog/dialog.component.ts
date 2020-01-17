@@ -2,6 +2,7 @@ import {Component, Inject} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {ELEMENT_DATA} from '../../model/data_member';
+import {ListMemberComponent} from '../../pages/list-member/list-member.component'
 /**
  * @title Dialog Overview
  */
@@ -33,6 +34,9 @@ export class DialogDetail{
   onNoClick(): void {
     this.dialogRef.close();
   }
+  onSubmit() {
+    
+  }
 }
 
 /**
@@ -53,12 +57,9 @@ export class DialogOverview{
   email: string;
   yearBirth: number;
   constructor(
+    public listMemberComponent:ListMemberComponent,
     public dialog: MatDialog) {
   }
-
-  // onNoClick(): void {
-  //   this.dialogRef.close();
-  // }
   openDialog(member?): void {
     const dialogRef = this.dialog.open(DialogDetail, {
       width: '400px',
@@ -69,6 +70,7 @@ export class DialogOverview{
       if (result){
         ELEMENT_DATA.push(result)
         console.log(result)
+        this.listMemberComponent.loadData()
       }
     });
   }
