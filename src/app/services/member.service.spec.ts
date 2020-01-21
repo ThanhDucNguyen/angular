@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ListScreenService } from './list-screen.service';
+import { MemberService } from './member.service';
 
-describe('ListScreenService', () => {
+describe('MemberService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ListScreenService = TestBed.get(ListScreenService);
+    const service: MemberService = TestBed.get(MemberService);
     expect(service).toBeTruthy();
   });
 });

@@ -1,10 +1,6 @@
 <div class="content" role="main">
     <h2 class="main_title">List Member</h2>
-    <!-- <dialog-overview-example></dialog-overview-example> -->
-    <!-- <a routerLink="/add-member">
-        <button mat-raised-button class="add_member"> Add column </button>
-    </a> -->
-    <dialog-btn></dialog-btn>
+    <button mat-raised-button class="add_member" routerLink="/add-member"> Add column </button>
     <div class="mat-elevation-z8">
         <form class="example-form" >
             <mat-form-field class="filter">
@@ -42,8 +38,10 @@
             <ng-container matColumnDef="option">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Option </th>
                 <td mat-cell *matCellDef="let element">
-                    <dialog-btn-update></dialog-btn-update>
-                    <button mat-flat-button color="accent" (click)="removeMember(element)"> Delete </button>
+                    <button mat-raised-button color="primary" [routerLink]="['/update-member', element.email, element.so_dien_thoai]"> Update </button>
+                    <!-- <button mat-flat-button color="accent" (click)="removeMember(element)"> Delete </button> -->
+                    <button mat-flat-button color="accent" (click)="openDialog(element)"> Delete </button>
+                    <!-- <button mat-flat-button color="accent" (click)="removeMember(element)"> Delete </button> -->
                 </td>
             </ng-container>
         

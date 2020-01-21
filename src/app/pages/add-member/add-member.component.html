@@ -7,17 +7,26 @@
           <div>
             <label class="label-input">Họ và tên: </label>
             <mat-form-field>
-              <input matInput placeholder="Hãy nhập họ và tên..." formControlName="name">
+              <input matInput placeholder="Hãy nhập họ và tên..." formControlName="name" required>
+              <mat-error *ngIf="!valid">
+                Vui lòng nhập giá trị
+              </mat-error>
             </mat-form-field>
             <br>
             <label class="label-input">Số điện thoại: </label>
             <mat-form-field>
-              <input type="number" matInput placeholder="Hãy nhập số điện thoại..." formControlName="phone">
+              <input type="number" matInput placeholder="Hãy nhập số điện thoại..." formControlName="phone" required>
+              <mat-error *ngIf="!valid">
+                Vui lòng nhập giá trị
+              </mat-error>
             </mat-form-field>
             <br>
             <label class="label-input">Email: </label>
             <mat-form-field>
-              <input type="email" matInput placeholder="Hãy nhập email..." formControlName="email">
+              <input type="email" matInput placeholder="Hãy nhập email..." formControlName="email" required>
+              <mat-error *ngIf="!valid">
+                Vui lòng nhập giá trị
+              </mat-error>
             </mat-form-field>
             <br>
             <label class="label-input">Năm sinh: </label>
@@ -30,7 +39,7 @@
             </mat-form-field>
             
           </div>
-          <button class="btn-btn back" mat-button>No Thanks</button>
+          <button class="btn-btn back" mat-button routerLink="/">No Thanks</button>
           <button class="btn-btn add_member" mat-button> Ok </button>
 
         </form>

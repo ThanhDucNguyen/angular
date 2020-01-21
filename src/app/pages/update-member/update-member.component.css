@@ -1,0 +1,53 @@
+.content {
+    width: 100%;
+    margin: 32px auto;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+}
+mat-form-field{
+    width: 50%;
+}
+.label-input{
+    width: 10%;
+    margin-left: 15%;
+}
+.btn-btn{
+    margin-left: 40%;
+}
+mat-radio-button{
+    margin-right: 20px;
+    color: #848484;
+    font-weight: 100;
+}
+.gender-radio{
+    margin-left: 24%;
+}
+.title-dialog{
+    text-align: center;
+}
+.help-text{
+    margin-left: 15%;
+}
+.add_member{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.back{
+    background: #cccccc;;
+    color: black;
+    margin-right: 15px;
+}
+.add_member :hover {
+    background-color:black;
+    border: none;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+}

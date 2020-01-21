@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import {ELEMENT_DATA} from '../../model/data_member';
+import { Router } from '@angular/router';
+import {ServerService} from '../../services/member.service'
 
 export interface Nam_sinh {
   value: string;
@@ -29,13 +30,16 @@ export class AddMemberComponent implements OnInit {
     {value: '1998', viewValue: '1998'},
     {value: '1999', viewValue: '1999'},
   ];
-  constructor() { }
+  constructor(
+    public serverService: ServerService,
+    private router: Router,
+    ) {}
 
   ngOnInit() {
   }
   onSubmit() {
-    console.warn(this.profileForm.value);
-    this.ns.push({value: '2000', viewValue: '2000'})
-    ELEMENT_DATA.push({ho_ten: 'Nguyễn Anh LLLLLLong', so_dien_thoai: 444555666, email: 'nguyenanhlong@luvina.net', nam_sinh: 1995},)
+    var data = this.profileForm.value
+    this.serverService.createMember(data)
+    this.router.navigate(['/']);
   }
 }

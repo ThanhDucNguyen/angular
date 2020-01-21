@@ -3,8 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './common/header/header.component';
-import { ListMemberComponent } from './pages/list-member/list-member.component';
-import { TemplateComponent } from './pages/template/template.component';
+import { ListMemberComponent, DialogOverviewExampleDialog } from './pages/list-member/list-member.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -25,7 +24,14 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
 import {AddMemberComponent} from './pages/add-member/add-member.component';
-import {DialogUpdate} from './template/dialog/dialog-update.component';
+// import {DialogUpdate} from './template/dialog/dialog-update.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { NgxTimelineModule } from 'ngx-timeline';
+import { OktaAuthModule } from '@okta/okta-angular';
+import { UpdateMemberComponent } from './pages/update-member/update-member.component';
+import { TestSelectboxComponent } from './pages/test-selectbox/test-selectbox.component';
+// import { TestFormValidationComponent } from './pages/test-form-validation/test-form-validation.component';
 
 
 
@@ -34,17 +40,20 @@ import {DialogUpdate} from './template/dialog/dialog-update.component';
     AppComponent,
     HeaderComponent,
     ListMemberComponent,
-    TemplateComponent,
-    DialogUpdate,
     DialogDetail,
     DialogOverview,
-    AddMemberComponent
+    AddMemberComponent,
+    UpdateMemberComponent,
+    TestSelectboxComponent,
+    // TestFormValidationComponent
+    DialogOverviewExampleDialog
   ],
   entryComponents: [
     ListMemberComponent,
-    DialogUpdate,
+    // DialogUpdate,
     DialogDetail,
-    DialogOverview
+    DialogOverview,
+    DialogOverviewExampleDialog
   ],
   imports: [
     BrowserModule,
@@ -64,6 +73,13 @@ import {DialogUpdate} from './template/dialog/dialog-update.component';
     MatSelectModule,
     FormsModule, 
     ReactiveFormsModule,
+    HttpClientModule,
+    NgxTimelineModule, 
+    OktaAuthModule.initAuth({
+      issuer: 'https://bit.ly/finding-okta-domain',
+      redirectUri: 'http://localhost:4200/implicit/callback',
+      clientId: '{yourClientId}'
+    })
   ],
   exports: [
     MatTableModule,
@@ -84,7 +100,8 @@ import {DialogUpdate} from './template/dialog/dialog-update.component';
     MatDatepickerModule, 
     ListMemberComponent,
     DialogDetail,
-    DialogOverview
+    DialogOverview,
+    DialogOverviewExampleDialog
   ],
   bootstrap: [AppComponent]
 })

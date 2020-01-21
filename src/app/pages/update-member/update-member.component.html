@@ -1,0 +1,38 @@
+<div class="content" role="main">
+    <h1 class="title-dialog" mat-dialog-title>Update Member</h1>
+    <div mat-dialog-content>
+      <p class="help-text">Hãy thay đổi thông tin chính xác nhất?</p>
+      <div class="example-container">
+          <!-- <form class="form-container" [formGroup]="profileForm" (ngSubmit)="onSubmit()"> -->
+          <form #login = "ngForm" (ngSubmit) = "onSubmit(login.value)" >
+            <div>
+              <label class="label-input">Họ và tên: </label>
+              <mat-form-field>
+                <input matInput placeholder="Hãy nhập họ và tên..." name="name" [(ngModel)]="data_member.name">
+              </mat-form-field>
+              <br>
+              <label class="label-input">Số điện thoại: </label>
+              <mat-form-field>
+                <input type="number" matInput placeholder="Hãy nhập số điện thoại..." name="phone" [(ngModel)]="data_member.phone">
+              </mat-form-field>
+              <br>
+              <label class="label-input">Email: </label>
+              <mat-form-field>
+                <input type="email" matInput placeholder="Hãy nhập email..." name="email" [(ngModel)]="data_member.email">
+              </mat-form-field>
+              <br>
+              <label class="label-input">Năm sinh: </label>
+              <mat-form-field>
+                  <mat-select [(value)]="data_member.yearBirth" name="yearBirth" [(ngModel)]="data_member.yearBirth">
+                      <mat-option *ngFor="let n of ns" [value]="n.value">
+                        {{n.viewValue}}
+                      </mat-option>
+                    </mat-select>
+              </mat-form-field>
+            </div>
+            <button class="btn-btn back" mat-button routerLink="/">No Thanks</button>
+            <button class="btn-btn add_member" mat-button> Ok </button>
+          </form>
+        </div>
+    </div>
+  </div>
